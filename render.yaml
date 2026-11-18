@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: weatherapp-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: OPEN_WEATHER_API_KEY
+        sync: false
